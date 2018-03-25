@@ -79,7 +79,7 @@ enum ModifyFlag
 	MODIFY_HEADERS = 4,
 	// 修改通知类型
 	MODIFY_NOTIFY = 8,
-	// 修改url,http header以及http body
+	// 修改url,http header,http body以及修改通知类型
 	MODIFY_ALL = MODIFY_URL | MODIFY_BODY | MODIFY_HEADERS | MODIFY_NOTIFY
 };
 
@@ -97,7 +97,7 @@ enum EventType
 
 enum LogLevel
 {
-	// 不打印日志,这个只是在设置日志级别是使用,在打印日志中不要使用
+	// 不打印日志
 	CLOSE = 0,
 	//  只打印ERR级别日志 
 	ERR = 1,

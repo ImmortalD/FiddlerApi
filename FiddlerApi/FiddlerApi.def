@@ -3,12 +3,16 @@ EXPORTS
 
 Start @1
 Close @2
-AddSimpleCallBack @3
-AddCallBack @4
-CreateAndTrustRootCert @5
-RemoveCert @6
-WriteLog @7
-WriteLogEx @8
-GetFiddlerConfig @9
-SetFiddlerConfig @10
-InitConfig @11
+GetFiddlerConfig @3
+SetFiddlerConfig @4
+SetCallBack @5
+ModifyFiddlerData @6
+ExportRootCert @7
+CreateAndTrustRootCert @8
+RemoveCert @9
+FreeFiddlerConfig @10
+FreeFiddlerData @11
+WriteLog @12
+WriteLogEx @13
+InitConfig @14
+ 
