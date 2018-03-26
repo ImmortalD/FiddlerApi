@@ -6,7 +6,7 @@
 using namespace std;
 
 #ifdef __FIDDLER_API_SOURCE
-// FiddlerApi.defÎÄ¼ş¶¨Òå
+// FiddlerApi.defæ–‡ä»¶å®šä¹‰
 #define __DECLSPEC    // __declspec(dllexport)  
 #include <stdlib.h>
 #include <iostream>
@@ -27,11 +27,11 @@ using namespace System::Threading;
 
 struct FiddlerData;
 #define  __FIDDLER_CALL  __stdcall
-// ÏûÏ¢»Øµ÷´¦Àíº¯Êı
+// æ¶ˆæ¯å›è°ƒå¤„ç†å‡½æ•°
 typedef bool(*lpCallBack)(FiddlerData& data);
 void  inline  SafeFree(__in void* ptr);
 
-void    SafeFree(__in void* ptr)
+void  SafeFree(__in void* ptr)
 {
 	if (!ptr)
 	{
@@ -51,119 +51,119 @@ typedef struct HttpHeader
 	string value;
 }*pHttpHeader;
 
-// Í¨ÖªÀàĞÍ
+// é€šçŸ¥ç±»å‹
 enum NotifyType
 {
-	// ²»Í¨ÖªÈÎºÎÀàĞÍ
+	// ä¸é€šçŸ¥ä»»ä½•ç±»å‹
 	NOTIFY_NO_ALL = 0,
-	// ·¢ËÍÖ®Ç°Í¨Öª
+	// å‘é€ä¹‹å‰é€šçŸ¥
 	NOTIFY_BEFORE_SEND = 1,
-	// ÏìÓ¦Ö®Ç°Í¨Öª
+	// å“åº”ä¹‹å‰é€šçŸ¥
 	NOTIFY_BEFORE_RESPONSE = 2,
-	// ÏìÓ¦Íê³ÉÍ¨Öª
+	// å“åº”å®Œæˆé€šçŸ¥
 	NOTIFY_COMPOLE_RESPONSE = 4,
-	// Í¨ÖªËùÓĞÀàĞÍ
+	// é€šçŸ¥æ‰€æœ‰ç±»å‹
 	NOTIFY_ALL = NOTIFY_BEFORE_SEND | NOTIFY_BEFORE_RESPONSE | NOTIFY_COMPOLE_RESPONSE
 };
 
 // FiddlerData modifyFlags values
 enum ModifyFlag
 {
-	// ²»ĞŞ¸ÄÊı¾İ
+	// ä¸ä¿®æ”¹æ•°æ®
 	MODIFY_NO_ALL = 0,
-	// ĞŞ¸ÄUrl
+	// ä¿®æ”¹Url
 	MODIFY_URL = 1,
-	// ĞŞ¸Ähttp body
+	// ä¿®æ”¹http body
 	MODIFY_BODY = 2,
-	// ĞŞ¸Ähttp Í·
+	// ä¿®æ”¹http å¤´
 	MODIFY_HEADERS = 4,
-	// ĞŞ¸ÄÍ¨ÖªÀàĞÍ
+	// ä¿®æ”¹é€šçŸ¥ç±»å‹
 	MODIFY_NOTIFY = 8,
-	// ĞŞ¸Äurl,http headerÒÔ¼°http body
+	// ä¿®æ”¹url,http headerä»¥åŠhttp body
 	MODIFY_ALL = MODIFY_URL | MODIFY_BODY | MODIFY_HEADERS | MODIFY_NOTIFY
 };
 
 // FiddlerData event values
 enum EventType
 {
-	// Êı¾İ·¢ËÍ½×¶Î,¿ÉĞŞ¸ÄÇëÇóÊı¾İ
+	// æ•°æ®å‘é€é˜¶æ®µ,å¯ä¿®æ”¹è¯·æ±‚æ•°æ®
 	SEND = 0,
-	// Êı¾İ½ÓÊÕ½×¶Î,¿ÉĞŞ¸ÄÏìÓ¦Êı¾İ
+	// æ•°æ®æ¥æ”¶é˜¶æ®µ,å¯ä¿®æ”¹å“åº”æ•°æ®
 	RECV,
-	// Êı¾İ½ÓÊÕ½×¶Î,Êı¾İ²»¿ÉĞŞ¸Ä
+	// æ•°æ®æ¥æ”¶é˜¶æ®µ,æ•°æ®ä¸å¯ä¿®æ”¹
 	COMPLETE
 };
 
 
 enum LogLevel
 {
-	// ²»´òÓ¡ÈÕÖ¾,Õâ¸öÖ»ÊÇÔÚÉèÖÃÈÕÖ¾¼¶±ğÊÇÊ¹ÓÃ,ÔÚ´òÓ¡ÈÕÖ¾ÖĞ²»ÒªÊ¹ÓÃ
+	// ä¸æ‰“å°æ—¥å¿—,è¿™ä¸ªåªæ˜¯åœ¨è®¾ç½®æ—¥å¿—çº§åˆ«æ˜¯ä½¿ç”¨,åœ¨æ‰“å°æ—¥å¿—ä¸­ä¸è¦ä½¿ç”¨
 	CLOSE = 0,
-	//  Ö»´òÓ¡ERR¼¶±ğÈÕÖ¾ 
+	//  åªæ‰“å°ERRçº§åˆ«æ—¥å¿— 
 	ERR = 1,
-	// ´òÓ¡WARNºÍERR¼¶±ğÈÕÖ¾
+	// æ‰“å°WARNå’ŒERRçº§åˆ«æ—¥å¿—
 	WARN = 2 | ERR,
-	// ´òÓ¡INFO WARN ERR ¼¶±ğÈÕÖ¾
+	// æ‰“å°INFO WARN ERR çº§åˆ«æ—¥å¿—
 	INFO = 4 | WARN,
-	// ´òÓ¡DEBUIG NFO WARN ERR ¼¶±ğÈÕÖ¾
+	// æ‰“å°DEBUIG NFO WARN ERR çº§åˆ«æ—¥å¿—
 	DEBUG = 8 | INFO
 };
 
 
 typedef struct FiddlerData
 {
-	// id,Ã¿Ò»´ÎhttpÇëÇóµÄÎ¨Ò»±êÊ¶,ÔÚÏûÏ¢»Øµ÷ÖĞ²»ÒªĞŞ¸Ä
+	// id,æ¯ä¸€æ¬¡httpè¯·æ±‚çš„å”¯ä¸€æ ‡è¯†,åœ¨æ¶ˆæ¯å›è°ƒä¸­ä¸è¦ä¿®æ”¹
 	int id;
-	// »Øµ÷ÏûÏ¢ÀàĞÍ 0±íÊ¾Êı¾İ·¢ËÍ½×¶Î,1Êı¾İ½ÓÊÕ½×¶Î,2±íÊ¾Êı¾İ´¦ÀíÍê³É½×¶Î.Õâ¸ö½×¶ÎµÄÊı¾İ²»ÄÜÔÚĞŞ¸ÄÁË.È¡Öµ¶ÔÓ¦ÓëEVENTµÄÃ¶¾ÙÖµ
+	// å›è°ƒæ¶ˆæ¯ç±»å‹ 0è¡¨ç¤ºæ•°æ®å‘é€é˜¶æ®µ,1æ•°æ®æ¥æ”¶é˜¶æ®µ,2è¡¨ç¤ºæ•°æ®å¤„ç†å®Œæˆé˜¶æ®µ.è¿™ä¸ªé˜¶æ®µçš„æ•°æ®ä¸èƒ½åœ¨ä¿®æ”¹äº†.å–å€¼å¯¹åº”ä¸EVENTçš„æšä¸¾å€¼
 	int event;
-	// HttpÇëÇóµÄ½ø³ÌID,ÔÚ»Øµ÷ÖĞ²»ÒªĞŞ¸Ä
+	// Httpè¯·æ±‚çš„è¿›ç¨‹ID,åœ¨å›è°ƒä¸­ä¸è¦ä¿®æ”¹
 	int processId;
-	// ÊÇ·ñÒªĞŞ¸ÄHttpÏìÓ¦body,Èç¹ûĞèÒªĞŞ¸ÄĞèÒªÔÚ»Øµ÷º¯Êıevent=SEND(0)µÄÊ±ºò°ÑbModifyResponseBodyĞŞ¸ÄÎªtrue
+	// æ˜¯å¦è¦ä¿®æ”¹Httpå“åº”body,å¦‚æœéœ€è¦ä¿®æ”¹éœ€è¦åœ¨å›è°ƒå‡½æ•°event=SEND(0)çš„æ—¶å€™æŠŠbModifyResponseBodyä¿®æ”¹ä¸ºtrue
 	bool bModifyResponseBody;
-	// ĞŞ¸ÄµÄÊı¾İ±êÖ¾È¡ÖµÊÇ`ModifyFlag`µÄÃ¶¾ÙÖµ,ĞèÒªĞŞ¸Ä¶àÏîµÄÖµÆäÈ¡Öµ¿ÉÒÔÊÇ`MODIFY_BODY|MODIFY_HEADERS`ÕâÑùµÄ
+	// ä¿®æ”¹çš„æ•°æ®æ ‡å¿—å–å€¼æ˜¯`ModifyFlag`çš„æšä¸¾å€¼,éœ€è¦ä¿®æ”¹å¤šé¡¹çš„å€¼å…¶å–å€¼å¯ä»¥æ˜¯`MODIFY_BODY|MODIFY_HEADERS`è¿™æ ·çš„
 	ModifyFlag modifyFlags;
-	// Í¨ÖªÀàĞÍ
+	// é€šçŸ¥ç±»å‹
 	NotifyType notifyType;
-	// httpÇëÇóµÄurl
+	// httpè¯·æ±‚çš„url
 	char*   url;
-	// httpÇëÇó·½Ê½,GET POST CONNECTµÈ
+	// httpè¯·æ±‚æ–¹å¼,GET POST CONNECTç­‰
 	char*   httpMethod;
-	// httpĞ­Òé°æ±¾,Èç HTTP/1.1
+	// httpåè®®ç‰ˆæœ¬,å¦‚ HTTP/1.1
 	char*   httpVersion;
-	// httpÍ·ĞÅÏ¢,enevtÎªSENDÊ±±íÊ¾ÇëÇóÍ·,·ñÔòÊÇÏìÓ¦Í· 
+	// httpå¤´ä¿¡æ¯,enevtä¸ºSENDæ—¶è¡¨ç¤ºè¯·æ±‚å¤´,å¦åˆ™æ˜¯å“åº”å¤´ 
 	char*   header;
-	// http ÕıÎÄÊı¾İ
+	// http æ­£æ–‡æ•°æ®
 	char*   body;
 
 } *pFiddlerData;
 
 typedef struct FiddlerConfig
 {
-	// Fiddler´úÀí¶Ë¿Ú
+	// Fiddlerä»£ç†ç«¯å£
 	int iListenPort;
-	// ÊÇ·ñ¿ªÆôÏµÍ³´úÀí
+	// æ˜¯å¦å¼€å¯ç³»ç»Ÿä»£ç†
 	bool bRegisterAsSystemProxy;
-	// Ä¬ÈÏÊÇ·ñ¶¼ĞŞ¸ÄResponseBody
+	// é»˜è®¤æ˜¯å¦éƒ½ä¿®æ”¹ResponseBody
 	bool bAlwaysModifyResponseBody;
-	// ÊÇ·ñ½âÃÜhttpsµÄÁ÷Á¿,Õâ¸öĞèÒªĞÅÈÎFiddlerµÄ¸ùÖ¤Êé
+	// æ˜¯å¦è§£å¯†httpsçš„æµé‡,è¿™ä¸ªéœ€è¦ä¿¡ä»»Fiddlerçš„æ ¹è¯ä¹¦
 	bool bDecryptSSL;
-	// ÊÇ·ñÔÊĞíÔ¶³ÌÁ¬½Ó
+	// æ˜¯å¦å…è®¸è¿œç¨‹è¿æ¥
 	bool bAllowRemote;
-	// httpsÁ÷Á¿½âÃÜÊ¹ÓÃ
+	// httpsæµé‡è§£å¯†ä½¿ç”¨
 	int iSecureEndpointPort;
-	// ÈÕÖ¾¼¶±ğ
+	// æ—¥å¿—çº§åˆ«
 	LogLevel logLevel;
-	// Í¨ÖªÀàĞÍ
+	// é€šçŸ¥ç±»å‹
 	NotifyType notifyType;
-	// »Øµ÷
+	// å›è°ƒ
 	lpCallBack callBack;
 	// szSecureEndpointHostname
 	char *szSecureEndpointHostname;
-	// ÈÕÖ¾ÎÄ¼şÈ«Â·¾¶
+	// æ—¥å¿—æ–‡ä»¶å…¨è·¯å¾„
 	char* szLogFileName;
-	// ½ø³ÌPID¹ıÂËÕıÔò±í´ïÊ½,ºÍ½ø³ÌÃû¹ıÂËÕıÔò±í´ïÊ½Ö»ÒªÓĞÒ»¸öÆ¥ÅäÉÏ¾Í±íÊ¾Æ¥ÅäÉÏ
+	// è¿›ç¨‹PIDè¿‡æ»¤æ­£åˆ™è¡¨è¾¾å¼,å’Œè¿›ç¨‹åè¿‡æ»¤æ­£åˆ™è¡¨è¾¾å¼åªè¦æœ‰ä¸€ä¸ªåŒ¹é…ä¸Šå°±è¡¨ç¤ºåŒ¹é…ä¸Š
 	char* szRegexProcessId;
-	// ½ø³ÌÃû¹ıÂËÕıÔò±í´ïÊ½
+	// è¿›ç¨‹åè¿‡æ»¤æ­£åˆ™è¡¨è¾¾å¼
 	char* szRegexProcessName;
 
 } *pFiddlerConfig;
@@ -172,33 +172,33 @@ typedef struct FiddlerConfig
 extern "C" {
 #endif //  _cplusplus
 
-	// ¿ªÆôFiddler
+	// å¼€å¯Fiddler
 	__DECLSPEC bool __FIDDLER_CALL Start();
-	// ¹Ø±ÕFiddler
+	// å…³é—­Fiddler
 	__DECLSPEC bool __FIDDLER_CALL Close();
-	// »ñÈ¡ÅäÖÃ
+	// è·å–é…ç½®
 	__DECLSPEC  void __FIDDLER_CALL GetFiddlerConfig(__inout FiddlerConfig* const data);
-	// ÉèÖÃFiddlerÅäÖÃ, ×¢Òâ,Õâ¸öÒªÔÚ Start()Ö®Ç°µ÷ÓÃ²ÅÉúĞ§
+	// è®¾ç½®Fiddleré…ç½®, æ³¨æ„,è¿™ä¸ªè¦åœ¨ Start()ä¹‹å‰è°ƒç”¨æ‰ç”Ÿæ•ˆ
 	__DECLSPEC bool __FIDDLER_CALL SetFiddlerConfig(__in const FiddlerConfig* const);
-	// Ìí¼Ó»Øµ÷´¦Àí
+	// æ·»åŠ å›è°ƒå¤„ç†
 	__DECLSPEC bool __FIDDLER_CALL SetCallBack(__in const lpCallBack callBack);
-	// ĞŞ¸ÄFiddlerÊı¾İ
+	// ä¿®æ”¹Fiddleræ•°æ®
 	__DECLSPEC bool __FIDDLER_CALL ModifyFiddlerData(__in const FiddlerData* const newData);
-	// µ¼³öFiddler¸ùÖ¤Êé
+	// å¯¼å‡ºFiddleræ ¹è¯ä¹¦
 	__DECLSPEC bool __FIDDLER_CALL ExportRootCert(__in const char* const fileName);
-	// ´´½¨ºÍĞÅÈÎFiddler¸ùÖ¤Êé,httpsĞèÒª
+	// åˆ›å»ºå’Œä¿¡ä»»Fiddleræ ¹è¯ä¹¦,httpséœ€è¦
 	__DECLSPEC bool __FIDDLER_CALL CreateAndTrustRootCert();
-	// É¾³ıfiddlerÉú³ÉµÄÖ¤Êé
+	// åˆ é™¤fiddlerç”Ÿæˆçš„è¯ä¹¦
 	__DECLSPEC bool __FIDDLER_CALL RemoveCert(__in const bool bRemoveRoot);
-	// ÊÍ·ÅFidderConfig
+	// é‡Šæ”¾FidderConfig
 	__DECLSPEC void __FIDDLER_CALL FreeFiddlerConfig(__in FiddlerConfig* data);
-	// ÊÍ·ÅFreeFiddlerData
+	// é‡Šæ”¾FreeFiddlerData
 	__DECLSPEC void __FIDDLER_CALL  FreeFiddlerData(__in FiddlerData* data);
-	// Ğ´ÈÕÖ¾,×¢Òâ,Õâ¸öÒªÔÚ Start()Ö®ºóµ÷ÓÃ²ÅÉúĞ§
+	// å†™æ—¥å¿—,æ³¨æ„,è¿™ä¸ªè¦åœ¨ Start()ä¹‹åè°ƒç”¨æ‰ç”Ÿæ•ˆ
 	__DECLSPEC void __FIDDLER_CALL WriteLog(LogLevel level, const char* const str);
-	// Ğ´ÈÕÖ¾,×¢Òâ,Õâ¸öÒªÔÚ Start()Ö®ºóµ÷ÓÃ²ÅÉúĞ§
+	// å†™æ—¥å¿—,æ³¨æ„,è¿™ä¸ªè¦åœ¨ Start()ä¹‹åè°ƒç”¨æ‰ç”Ÿæ•ˆ
 	__DECLSPEC void __FIDDLER_CALL WriteLogEx(LogLevel level, const char* const format, ...);
-	// ³õÊ¼»¯Ä¬ÈÏFiddlerÅäÖÃĞÅÏ¢,DLL¼ÓÔØÊÇ×Ô¶¯³õÊ¼»¯,Íâ²¿²»ĞèÒªµ÷ÓÃÕâ¸öº¯Êı
+	// åˆå§‹åŒ–é»˜è®¤Fiddleré…ç½®ä¿¡æ¯,DLLåŠ è½½æ˜¯è‡ªåŠ¨åˆå§‹åŒ–,å¤–éƒ¨ä¸éœ€è¦è°ƒç”¨è¿™ä¸ªå‡½æ•°
 	__DECLSPEC  bool  InitConfig();
 
 #ifdef __cplusplus
