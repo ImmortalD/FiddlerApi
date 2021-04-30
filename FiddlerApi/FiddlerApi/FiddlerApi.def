@@ -13,6 +13,7 @@ RemoveCert @9
 FreeFiddlerConfig @10
 FreeFiddlerData @11
 WriteLog @12
-WriteLogEx @13
-InitConfig @14
- 
+InitConfig @13
+OnExit @14
+GetDotNetVersion @15
+FreeVersion @16

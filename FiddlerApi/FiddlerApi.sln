@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2015
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FiddlerApi", "FiddlerApi\FiddlerApi.vcxproj", "{DA63405A-67DF-4B97-8ED5-548C3A65927E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Dynamic_Lib_Debug|x64 = Dynamic_Lib_Debug|x64
+		Dynamic_Lib_Debug|x86 = Dynamic_Lib_Debug|x86
+		Dynamic_Lib_Release|x64 = Dynamic_Lib_Release|x64
+		Dynamic_Lib_Release|x86 = Dynamic_Lib_Release|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+		Static_Lib_Debug|x64 = Static_Lib_Debug|x64
+		Static_Lib_Debug|x86 = Static_Lib_Debug|x86
+		Static_Lib_Release|x64 = Static_Lib_Release|x64
+		Static_Lib_Release|x86 = Static_Lib_Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA63405A-67DF-4B97-8ED5-548C3A65927E}.Debug|x64.ActiveCfg = Debug|x64
+		{DA63405A-67DF-4B97-8ED5-548C3A65927E}.Debug|x64.Build.0 = Debug|x64
+		{DA63405A-67DF-4B97-8ED5-548C3A65927E}.Debug|x86.ActiveCfg = Debug|Win32
+		{DA63405A-67DF-4B97-8ED5-548C3A65927E}.Debug|x86.Build.0 = Debug|Win32
+		{DA63405A-67DF-4B97-8ED5-548C3A65927E}.Dynamic_Lib_Debug|x64.ActiveCfg = Dynamic_Lib_Debug|x64
+		{DA63405A-67DF-4B97-8ED5-548C3A65927E}.Dynamic_Lib_Debug|x64.Build.0 = Dynamic_Lib_Debug|x64
+		{DA63405A-67DF-4B97-8ED5-548C3A65927E}.Dynamic_Lib_Debug|x86.ActiveCfg = Dynamic_Lib_Debug|Win32
+		{DA63405A-67DF-4B97-8ED5-548C3A65927E}.Dynamic_Lib_Debug|x86.Build.0 = Dynamic_Lib_Debug|Win32
+		{DA63405A-67DF-4B97-8ED5-548C3A65927E}.Dynamic_Lib_Release|x64.ActiveCfg = Dynamic_Lib_Release|x64
+		{DA63405A-67DF-4B97-8ED5-548C3A65927E}.Dynamic_Lib_Release|x64.Build.0 = Dynamic_Lib_Release|x64
+		{DA63405A-67DF-4B97-8ED5-548C3A65927E}.Dynamic_Lib_Release|x86.ActiveCfg = Dynamic_Lib_Release|Win32
+		{DA63405A-67DF-4B97-8ED5-548C3A65927E}.Dynamic_Lib_Release|x86.Build.0 = Dynamic_Lib_Release|Win32
+		{DA63405A-67DF-4B97-8ED5-548C3A65927E}.Release|x64.ActiveCfg = Release|x64
+		{DA63405A-67DF-4B97-8ED5-548C3A65927E}.Release|x64.Build.0 = Release|x64
+		{DA63405A-67DF-4B97-8ED5-548C3A65927E}.Release|x86.ActiveCfg = Release|Win32
+		{DA63405A-67DF-4B97-8ED5-548C3A65927E}.Release|x86.Build.0 = Release|Win32
+		{DA63405A-67DF-4B97-8ED5-548C3A65927E}.Static_Lib_Debug|x64.ActiveCfg = Static_Lib_Debug|x64
+		{DA63405A-67DF-4B97-8ED5-548C3A65927E}.Static_Lib_Debug|x64.Build.0 = Static_Lib_Debug|x64
+		{DA63405A-67DF-4B97-8ED5-548C3A65927E}.Static_Lib_Debug|x86.ActiveCfg = Static_Lib_Debug|Win32
+		{DA63405A-67DF-4B97-8ED5-548C3A65927E}.Static_Lib_Debug|x86.Build.0 = Static_Lib_Debug|Win32
+		{DA63405A-67DF-4B97-8ED5-548C3A65927E}.Static_Lib_Release|x64.ActiveCfg = Static_Lib_Release|x64
+		{DA63405A-67DF-4B97-8ED5-548C3A65927E}.Static_Lib_Release|x64.Build.0 = Static_Lib_Release|x64
+		{DA63405A-67DF-4B97-8ED5-548C3A65927E}.Static_Lib_Release|x86.ActiveCfg = Static_Lib_Release|Win32
+		{DA63405A-67DF-4B97-8ED5-548C3A65927E}.Static_Lib_Release|x86.Build.0 = Static_Lib_Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {30B21933-A4F5-4C0F-A076-C835B5440925}
+	EndGlobalSection
+EndGlobal

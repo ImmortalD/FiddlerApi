@@ -119,7 +119,7 @@ public class Fiddler {
 //        }
 
 
-        System.load("C:\\Users\\admin\\source\\repos\\FiddlerJNI\\x64\\Release\\FiddlerJNI.dll");
+        System.load("../FiddlerJNI/x64/Release/FiddlerJNI.dll");
     }
 
 

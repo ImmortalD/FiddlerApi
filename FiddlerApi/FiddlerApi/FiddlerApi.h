@@ -100,7 +100,7 @@ typedef struct FiddlerData
 	// 通知类型
 	int nNotifyType;
 	// 进程名
-	char* lpszProcessName;
+	char * lpszProcessName;
 	// http请求的url
 	char* lpszUrl;
 	// http请求方式,GET POST CONNECT等
@@ -162,7 +162,7 @@ typedef struct FiddlerConfig
 	// 回调
 	lpFiddlerCallBack lpCallBack;
 	// szSecureEndpointHostname
-	char* lpszSecureEndpointHostname;
+	char *lpszSecureEndpointHostname;
 	// 日志文件路径
 	char* lpszLogFileName;
 	// 进程PID过滤正则表达式,和进程名过滤正则表达式只要有一个匹配上就表示匹配上

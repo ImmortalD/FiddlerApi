@@ -13,18 +13,36 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="easyloggingpp">
+      <UniqueIdentifier>{efa97ed8-d44d-4f07-aea0-e356fb4b9382}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="FiddlerJNI.h">
-      <Filter>头文件</Filter>
+    <ClCompile Include="..\easyloggingpp\easylogging++.cc">
+      <Filter>easyloggingpp</Filter>
+    </ClCompile>
+    <ClCompile Include="FiddlerApi.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="util.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\easyloggingpp\easylogging++.h">
+      <Filter>easyloggingpp</Filter>
     </ClInclude>
     <ClInclude Include="FiddlerApi.h">
       <Filter>头文件</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="FiddlerJNI.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
+    <ClInclude Include="util.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
